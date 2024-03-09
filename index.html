@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рандомайзер</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  .container {
+    margin-top: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  .container:hover {
+    transform: translateY(-5px);
+  }
+  h1 {
+    color: #007bff;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #0056b3;
+  }
+  #result {
+    font-size: 0; /* Начальный размер 0 */
+    margin-top: 20px;
+    opacity: 0; /* Начальная прозрачность 0 */
+    transition: all 0.3s ease; /* Анимация появления */
+  }
+  #result.show {
+    font-size: 44px;
+    opacity: 1;
+  }
+  .num{
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .top{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Рандомайзер</h1>
+  <label class="top" for="min">Минимальное значение:</label>
+  <input class="top"  type="number" id="min" value="1"> <br>
+  <label class="top" for="max">Максимальное значение:</label>
+  <input class="top" type="number" id="max" value="100"><br>
+  <button onclick="generateRandom()">Крутить рандомайзер</button>
+  <div class="num">Ваше число : </div>
+  <div id="result"></div>
+</div>
+
+<script>
+  function generateRandom() {
+    const resultElement = document.getElementById('result');
+    resultElement.classList.remove('show'); // Убираем класс для анимации появления
+    setTimeout(() => {
+      resultElement.innerText = ` 25`;
+      resultElement.classList.add('show'); // Добавляем класс для анимации появления
+    }, 250); // Задержка перед появлением числа, соответствует времени анимации
+  }
+</script>
+</body>
+</html>
